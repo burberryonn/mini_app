@@ -1,13 +1,13 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
-import { initMiniApp, mockTelegramEnv, parseInitData } from '@telegram-apps/sdk';
+import { init, mockTelegramEnv, parseInitData } from '@telegram-apps/sdk';
 
 const initializeTelegramSDK = async () => {
   try {
     // Попытка инициализировать настоящее окружение Telegram
     console.log("Инициализация окружения Telegram");
-    const [miniApp] = initMiniApp();
+    const [miniApp] = init();
     await miniApp.ready();
     miniApp.setHeaderColor('#fcb69f');
   } catch (error) {
